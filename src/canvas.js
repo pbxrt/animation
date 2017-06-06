@@ -34,12 +34,18 @@ Ball.prototype = {
 
 var ballArr = []
 for(var i=0; i<10; i++){
-  var ball = new Ball(200, 2, 200, 3, 50, '#ccc');
+  var radius = 10 + Math.random()*40
+  var dx = Math.random()*10 - 5
+  var dy = Math.random()*10 - 5
+  var ball = new Ball(200, dx, 200, dy, radius, '#ccc');
+  ballArr.push(ball)
 }
 function animate(){
   requestAnimationFrame(animate)
   ctx.clearRect(0, 0, innerWidth, innerHeight)
-  ball.update()
+  ballArr.forEach((ball) => {
+    ball.update()
+  })
 }
 
 animate()
