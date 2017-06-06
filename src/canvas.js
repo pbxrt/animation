@@ -109,4 +109,7 @@ function animate(){
   })
 }
 
-animate()
+setTimeout(function(){
+  document.body.style.background = '#fdfdfd'
+  animate()
+}, 1000)

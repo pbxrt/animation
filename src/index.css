@@ -6,6 +6,9 @@ html,body {
   margin: 0;
   padding: 0;
 }
+body {
+  background: black;
+}
 canvas {
   display: block;
   width: 100%;
