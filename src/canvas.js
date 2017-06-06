@@ -7,6 +7,7 @@ let mouse = {
   x: undefined,
   y: undefined
 }
+//鼠标移动时，更改mouse对象的属性
 window.addEventListener('mousemove', function(e){
   mouse.x = e.x
   mouse.y = e.y
@@ -69,12 +70,14 @@ for(var i=0; i<10; i++){
   var dx = Math.random()*10 - 5
   var dy = Math.random()*10 - 5
   var ball = new Ball(200, dx, 200, dy, radius, '#ccc');
+  //将每个ball的实例存储到ballArr中
   ballArr.push(ball)
 }
 
 function animate(){
   requestAnimationFrame(animate)
   ctx.clearRect(0, 0, innerWidth, innerHeight)
+  //调用每个ball的update方法
   ballArr.forEach((ball) => {
     ball.update()
   })
