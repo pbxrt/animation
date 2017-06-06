@@ -18,6 +18,8 @@ function Ball(x, dx, y, dy, radius,color){
   this.y = y
   this.dy = dy
   this.radius = radius
+  //存储ball的初始radius值
+  this.initialRadius = radius
   this.color = color
 }
 Ball.prototype = {
@@ -51,9 +53,9 @@ Ball.prototype = {
     //如果ball的x坐标距离鼠标的x坐标超过50 或者 ball的y坐标距离鼠标超过50，让他的半径减1
     if(mouse.x - this.x > 50 || mouse.x - this.x < -50 || mouse.y - this.y > 50 || mouse.y - this.y < -50){
       this.radius -= 1
-      //如果ball的半径超过50将不再继续增加
-      if(this.radius <= 3){
-        this.radius = 3
+      //如果ball的半径小于其初始半径将不再继续减小
+      if(this.radius <= this.initialRadius){
+        this.radius = this.initialRadius
       }
     }
     this.draw()
