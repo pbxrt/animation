@@ -48,6 +48,14 @@ Ball.prototype = {
         this.radius = 50
       }
     }
+    //如果ball的x坐标距离鼠标的x坐标超过50 或者 ball的y坐标距离鼠标超过50，让他的半径减1
+    if(mouse.x - this.x > 50 || mouse.x - this.x < -50 || mouse.y - this.y > 50 || mouse.y - this.y < -50){
+      this.radius -= 1
+      //如果ball的半径超过50将不再继续增加
+      if(this.radius <= 3){
+        this.radius = 3
+      }
+    }
     this.draw()
   }
 }
