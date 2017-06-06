@@ -7,6 +7,14 @@ let mouse = {
   x: undefined,
   y: undefined
 }
+//增加随机颜色数组
+let colorArr = [
+  '#A45D90',
+  '#513D5A',
+  '#F3CFAE',
+  '#F0AB9A',
+  '#F17370'
+]
 //鼠标移动时，更改mouse对象的属性
 window.addEventListener('mousemove', function(e){
   mouse.x = e.x
@@ -67,9 +75,13 @@ Ball.prototype = {
 var ballArr = []
 for(var i=0; i<10; i++){
   var radius = 3 + Math.random()*10
+  //设置dx的值为-5到5之间
   var dx = Math.random()*10 - 5
+  //设置dy的值为-5到5之间
   var dy = Math.random()*10 - 5
-  var ball = new Ball(200, dx, 200, dy, radius, '#ccc');
+  //设置随机颜色
+  var color = colorArr[Math.floor(Math.random()*colorArr.length)]
+  var ball = new Ball(200, dx, 200, dy, radius, color);
   //将每个ball的实例存储到ballArr中
   ballArr.push(ball)
 }
