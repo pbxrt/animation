@@ -4,8 +4,8 @@ canvas.height = window.innerHeight
 let ctx = canvas.getContext('2d')
 
 let mouse = {
-  x: undefined,
-  y: undefined
+  x: innerWidth/2,
+  y: innerHeight/2
 }
 //增加随机颜色数组
 let colorArr = [
@@ -81,7 +81,8 @@ for(var i=0; i<800; i++){
   var dy = Math.random()*10 - 5
   //设置随机颜色
   var color = colorArr[Math.floor(Math.random()*colorArr.length)]
-  var ball = new Ball(600, dx, 300, dy, radius, color);
+  var x = innerWidth/2, y = innerHeight/2; 
+  var ball = new Ball(x, dx, y, dy, radius, color);
   //将每个ball的实例存储到ballArr中
   ballArr.push(ball)
 }
