@@ -1,0 +1,21 @@
+{
+  "name": "animation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gp": "proxychains4 -f ~/.proxychains.conf git push origin master"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Younger-Peng/animation.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Younger-Peng/animation/issues"
+  },
+  "homepage": "https://github.com/Younger-Peng/animation#readme"
+}
