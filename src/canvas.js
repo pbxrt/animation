@@ -21,6 +21,9 @@ window.addEventListener('mousemove', function(e){
   mouse.y = e.y
 })
 window.addEventListener('resize', function(){
+  //重新初始化canvas的宽和高
+  canvas.width = window.innerWidth
+  canvas.height = window.innerHeight
   start()
 })
 
