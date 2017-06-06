@@ -99,7 +99,7 @@ function start(){
 
 //最开始的时候调用一次
 start()
-
+count()
 function animate(){
   requestAnimationFrame(animate)
   ctx.clearRect(0, 0, innerWidth, innerHeight)
@@ -109,7 +109,18 @@ function animate(){
   })
 }
 
-setTimeout(function(){
-  document.body.style.background = '#fdfdfd'
-  animate()
-}, 1000)
+//倒计时函数
+function count(){
+  let i = 3;
+  let time = document.querySelector('.cover')
+  let timeLeft = setInterval(function(){
+    time.innerText = i
+    i -= 1
+    if(i === -1) {
+      clearInterval(timeLeft)
+      document.body.removeChild(time)
+      animate()
+    }
+  }, 1000)
+  
+}
