@@ -31,8 +31,11 @@ Ball.prototype = {
   }
 }
 
-var ball = new Ball(200, 1, 200, 1, 100, '#ccc');
 
+var ballArr = []
+for(var i=0; i<10; i++){
+  var ball = new Ball(200, 2, 200, 3, 50, '#ccc');
+}
 function animate(){
   requestAnimationFrame(animate)
   ctx.clearRect(0, 0, innerWidth, innerHeight)
