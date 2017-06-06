@@ -20,6 +20,9 @@ window.addEventListener('mousemove', function(e){
   mouse.x = e.x
   mouse.y = e.y
 })
+window.addEventListener('resize', function(){
+  start()
+})
 
 function Ball(x, dx, y, dy, radius,color){
   this.x = x
@@ -72,20 +75,27 @@ Ball.prototype = {
 }
 
 
-var ballArr = []
-for(var i=0; i<800; i++){
-  var radius = 2 + Math.random()*5
-  //设置dx的值为-4到4之间
-  var dx = Math.random()*8 - 4
-  //设置dy的值为-3到3之间
-  var dy = Math.random()*6 - 3
-  //设置随机颜色
-  var color = colorArr[Math.floor(Math.random()*colorArr.length)]
-  var x = innerWidth/2, y = innerHeight/2; 
-  var ball = new Ball(x, dx, y, dy, radius, color);
-  //将每个ball的实例存储到ballArr中
-  ballArr.push(ball)
+var ballArr;
+//把这段代码封装到start函数中，window resize的时候调用
+function start(){
+  ballArr = []
+  for(var i=0; i<800; i++){
+    var radius = 2 + Math.random()*5
+    //设置dx的值为-4到4之间
+    var dx = Math.random()*8 - 4
+    //设置dy的值为-3到3之间
+    var dy = Math.random()*6 - 3
+    //设置随机颜色
+    var color = colorArr[Math.floor(Math.random()*colorArr.length)]
+    var x = innerWidth/2, y = innerHeight/2; 
+    var ball = new Ball(x, dx, y, dy, radius, color);
+    //将每个ball的实例存储到ballArr中
+    ballArr.push(ball)
+  }
 }
+
+//最开始的时候调用一次
+start()
 
 function animate(){
   requestAnimationFrame(animate)
