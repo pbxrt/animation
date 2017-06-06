@@ -74,11 +74,11 @@ Ball.prototype = {
 
 var ballArr = []
 for(var i=0; i<800; i++){
-  var radius = 3 + Math.random()*10
-  //设置dx的值为-5到5之间
-  var dx = Math.random()*10 - 5
-  //设置dy的值为-5到5之间
-  var dy = Math.random()*10 - 5
+  var radius = 2 + Math.random()*5
+  //设置dx的值为-4到4之间
+  var dx = Math.random()*8 - 4
+  //设置dy的值为-3到3之间
+  var dy = Math.random()*6 - 3
   //设置随机颜色
   var color = colorArr[Math.floor(Math.random()*colorArr.length)]
   var x = innerWidth/2, y = innerHeight/2; 
