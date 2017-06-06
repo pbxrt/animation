@@ -17,7 +17,13 @@ function Ball(x, dx, y, dy, radius,color){
 }
 Ball.prototype.update = function(){
   this.x += this.dx
+  if(this.x + this.radius >= innerWidth || this.x - this.radius <= 0){
+    this.dx = -this.dx
+  }
   this.y += this.dy
+  if(this.y + this.radius >= innerHeight || this.y - this.radius <= 0){
+    this.dy = -this.dy
+  }
   ctx.beginPath()
   ctx.arc(this.x, this.y, this.radius, 0, Math.PI*2, true)
   ctx.fillStyle = this.color
