@@ -73,7 +73,7 @@ Ball.prototype = {
 
 
 var ballArr = []
-for(var i=0; i<10; i++){
+for(var i=0; i<800; i++){
   var radius = 3 + Math.random()*10
   //设置dx的值为-5到5之间
   var dx = Math.random()*10 - 5
@@ -81,7 +81,7 @@ for(var i=0; i<10; i++){
   var dy = Math.random()*10 - 5
   //设置随机颜色
   var color = colorArr[Math.floor(Math.random()*colorArr.length)]
-  var ball = new Ball(200, dx, 200, dy, radius, color);
+  var ball = new Ball(600, dx, 300, dy, radius, color);
   //将每个ball的实例存储到ballArr中
   ballArr.push(ball)
 }
