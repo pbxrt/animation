@@ -18,6 +18,7 @@ html,body {
   justify-content: center;
   align-items: center;
   font-size: 200px;
+  font-weight: 100;
 }
 canvas {
   display: block;
