@@ -58,7 +58,7 @@ Ball.prototype = {
       this.dy = -this.dy
     }
     //如果ball的x坐标距离鼠标的x坐标不超过50，ball的y坐标距离鼠标的y坐标也不超过50的话,让它的半径增1
-    if(Math.pow(mouse.x - this.x, 2) + Math.pow(mouse.y - this.y, 2) <= 2500){
+    if(Math.pow(mouse.x - this.x, 2) + Math.pow(mouse.y - this.y) <= 2500){
       this.radius += 1
       //如果ball的半径超过50将不再继续增加
       if(this.radius >= 50){
@@ -66,7 +66,7 @@ Ball.prototype = {
       }
     }
     //如果ball的x坐标距离鼠标的x坐标超过50 或者 ball的y坐标距离鼠标超过50，让他的半径减1
-    if(Math.pow(mouse.x - this.x, 2) + Math.pow(mouse.y - this.y, 2) > 2500){
+    if(Math.pow(mouse.x - this.x, 2) + Math.pow(mouse.y - this.y) > 2500){
       this.radius -= 1
       //如果ball的半径小于其初始半径将不再继续减小
       if(this.radius <= this.initialRadius){
