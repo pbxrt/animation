@@ -58,7 +58,7 @@ Ball.prototype = {
       this.dy = -this.dy
     }
     //如果ball的x坐标距离鼠标的x坐标不超过50，ball的y坐标距离鼠标的y坐标也不超过50的话,让它的半径增1
-    if(Math.pow(mouse.x - this.x, 2) + Math.pow(mouse.y - this.y) <= 2500){
+    if(Math.pow(mouse.x - this.x, 2) + Math.pow(mouse.y - this.y, 2) <= 2500){
       this.radius += 1
       //如果ball的半径超过50将不再继续增加
       if(this.radius >= 50){
@@ -66,7 +66,7 @@ Ball.prototype = {
       }
     }
     //如果ball的x坐标距离鼠标的x坐标超过50 或者 ball的y坐标距离鼠标超过50，让他的半径减1
-    if(Math.pow(mouse.x - this.x, 2) + Math.pow(mouse.y - this.y) > 2500){
+    if(Math.pow(mouse.x - this.x, 2) + Math.pow(mouse.y - this.y, 2) > 2500){
       this.radius -= 1
       //如果ball的半径小于其初始半径将不再继续减小
       if(this.radius <= this.initialRadius){
@@ -85,9 +85,9 @@ function start(){
   for(var i=0; i<800; i++){
     var radius = 2 + Math.random()*5
     //设置dx的值为-4到4之间
-    var dx = Math.random()*4 - 2
+    var dx = Math.random()*3 - 1.5
     //设置dy的值为-3到3之间
-    var dy = Math.random()*2 - 1
+    var dy = Math.random()*1.6 - 0.8
     //设置随机颜色
     var color = colorArr[Math.floor(Math.random()*colorArr.length)]
     var x = innerWidth/2, y = innerHeight/2; 
